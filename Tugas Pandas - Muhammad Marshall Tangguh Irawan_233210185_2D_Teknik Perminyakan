@@ -1,0 +1,92 @@
+1
+# Menambahkan Kolom Baru "Domisili_asal"
+
+import pandas as pd
+
+data = {'Nama'    : ['A','I','U','E','O'],
+        'Kelas'   : ['2A','2B','2C','2D','2F'],
+        'Gender'  : ['Cowok','Cowok','Cewek','Cewek','cowok'],
+        'Nomor_HP': ['08113322582','08129988563','08137896541','08144447789','08158886665']}
+
+df = pd.DataFrame(data)
+
+df['Domisili_asal'] = ['Pekanbaru ','Pekanbaru ','Luar kota ','Pekanbaru ','Luar kota ',]
+print("DataFrame setelah menambahkan kolom 'Domisili_asal':")
+print("\n")
+print(df)
+print("\n")
+
+
+2
+# Menghapus Kolom "Nomor_HP"
+
+import pandas as pd
+
+data = {'Nama'    : ['A','I','U','E','O'],
+        'Kelas'   : ['2A','2B','2C','2D','2F'],
+        'Gender'  : ['Cowok','Cowok','Cewek','Cewek','cowok'],
+        'Nomor_HP': ['08113322582','08129988563','08137896541','08144447789','08158886665']}
+df = pd.DataFrame(data)
+
+df = df.drop(columns=['Nomor_HP'])
+print("DataFrame setelah menghapus kolom 'Nomor_HP':")
+print("\n")
+print(df)
+print("\n")
+
+3
+# Menambahkan Kolom Baru "Usia"
+
+import pandas as pd
+
+data = {'Nama'    : ['A','I','U','E','O'],
+        'Kelas'   : ['2A','2B','2C','2D','2F'],
+        'Gender'  : ['Cowok','Cowok','Cewek','Cewek','cowok'],
+        'Nomor_HP': ['08113322582','08129988563','08137896541','08144447789','08158886665'],
+        'Usia'    : [8,8,7,8,7,]}
+df = pd.DataFrame(data)
+
+df['Usia'] = ['8 ','8 ','7 ','8 ','7 ']
+print("DataFrame setelah menambahkan kolom 'Usia':")
+print("\n")
+print(df)
+print("\n")
+
+4
+# Menghitung rata-rata Usia dan total Usia
+
+import pandas as pd
+
+data = {'Nama'    : ['A','I','U','E','O'],
+        'Kelas'   : ['2A','2B','2C','2D','2F'],
+        'Gender'  : ['Cowok','Cowok','Cewek','Cewek','cowok'],
+        'Nomor_HP': ['08113322582','08129988563','08137896541','08144447789','08158886665'],
+        'Usia'    : [8,8,7,8,7,]}
+
+df = pd.DataFrame(data)
+
+rata_usia = df['Usia'].mean()
+print("Rata-rata usia:", rata_usia)
+print("\n")
+
+total_usia = df['Usia'].sum()
+print("Total usia:", total_usia)
+print("\n")
+
+5
+# Menghitung jumlah yang berasal dari "Pekanbaru" dan "Luar Kota"
+
+import pandas as pd
+
+data = {'Nama'    : ['A','I','U','E','O'],
+        'Kelas'   : ['2A','2B','2C','2D','2F'],
+        'Gender'  : ['Cowok','Cowok','Cewek','Cewek','cowok'],
+        'Nomor_HP': ['08113322582','08129988563','08137896541','08144447789','08158886665'],
+        'Usia'    : [8,8,7,8,7,]}
+
+
+df = pd.DataFrame(data)
+df['Domisili_asal'] = ['Pekanbaru ','Pekanbaru ','Luar kota ','Pekanbaru ','Luar kota ',]
+jumlah_per_kota = df['Domisili_asal'].value_counts()
+print("Jumlah yang berasal dari:\n")
+print(jumlah_per_kota)
